@@ -3,9 +3,9 @@ let presentacionMedicamento=document.getElementById("presentacionmedicamento")
 let dosisMedicamento=document.getElementById("dosismedicamento")
 let fechaCaducidadMedicamento=document.getElementById("caducidadmedicamento")
 let laboratorioMedicamento=document.getElementById("laboratoriomedicamento")
-let contraindicacionesMedicamento=document.getElementById("contraindicacionesmedicamento")
+let contraIndicacionesMedicamento=document.getElementById("contraindicacionesmedicamento")
 let registroMedicamento=document.getElementById("registromedicamento")
-let copagoMedicamento=document.getElementById("copagomedicamento")
+let tieneCopagoMedicamento=document.getElementById("copagomedicamento")
 
 let botonRegistroMedicamento=document.getElementById("botonregistromedicamento")
 
@@ -18,9 +18,9 @@ botonRegistroMedicamento.addEventListener("click", function(evento){
         dosis : dosisMedicamento.value,
         fechaCaducidad : fechaCaducidadMedicamento.value,
         laboratorio : laboratorioMedicamento.value,
-        contraindicaciones : contraindicacionesMedicamento.value,
+        contraIndicaciones : contraIndicacionesMedicamento.value,
         registro : registroMedicamento.value,
-        copago : copagoMedicamento.value
+        tieneCopago : true
         
         
     }

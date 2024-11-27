@@ -1,64 +1,15 @@
-let pacientes=[
-    {
-        id:890,
-        nombres:"Emma Grisales",
-        fechaNacimiento:"2006-10-04",
-        ciudad:"Yarumal",
-        correo:"julieta@gmail.com",
-        telefono:"3202145050",
-        ips:"Angostura",
-        grupoIngresos:"A",
-        tienePoliza:true,
-        fechaAfiliacion:"2010-10-20"
+import {buscarPacientes} from "../services/serviciosPaciente.js"
 
+//1. Llamar al api
 
-    },
-    {
-        id:891,
-        nombres:"Carlos Muñoz",
-        fechaNacimiento:"2000-07-12",
-        ciudad:"Medellín",
-        correo:"carlosmunoz@gmail.com",
-        telefono:"3123456789",
-        ips:"Santa Mónica",
-        grupoIngresos:"B",
-        tienePoliza:true,
-        fechaAfiliacion:"2015-03-15"
-    },
-    
-    {
-        id:892,
-        nombres:"Laura Fernández",
-        fechaNacimiento:"1995-03-25",
-        ciudad:"Bogotá",
-        correo:"laurafernandez@gmail.com",
-        telefono:"3004567890",
-        ips:"Salud Total",
-        grupoIngresos:"C",
-        tienePoliza:false,
-        fechaAfiliacion:"2018-06-20"
-    },
-    
-    {
-        id:893,
-        nombres:"Andrés López",
-        fechaNacimiento:"1989-11-30",
-        ciudad:"Cali",
-        correo:"andreslopez@gmail.com",
-        telefono:"3109876543",
-        ips:"Viva Salud",
-        grupoIngresos:"A",
-        tienePoliza:true,
-        fechaAfiliacion:"2012-09-12"
-    }
-    
-]
-
-//2. Crear una referencia a una etiqueta html donde vamos a renderizar
+buscarPacientes()
+.then(function(respuestaBack){
+    console.log(respuestaBack)
+    //2. Crear una referencia a una etiqueta html donde vamos a renderizar
 let fila=document.getElementById("fila")
 
 //3. Se recorren los datos para obtenerlos de forma separada 
-pacientes.forEach(function(paciente){
+respuestaBack.forEach(function(paciente){
     console.log(paciente)
     //4. Se crean columnas 
     let columna=document.createElement("div")
@@ -129,4 +80,7 @@ pacientes.forEach(function(paciente){
    
     
 })
+})
+
+
 

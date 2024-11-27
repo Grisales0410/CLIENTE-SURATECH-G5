@@ -22,7 +22,7 @@ botonRegistroMedico.addEventListener("click", function(evento){
         ips : ipsMedico.value,
         telefono : telefonoMedico.value,
         direccion : direccionMedico.value,
-        disponibleFinDeSemana : disponibleFinDeSemanaMedico.value
+        disponibleFinDeSemana : true
         
     }
 

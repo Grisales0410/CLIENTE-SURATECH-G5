@@ -1,3 +1,4 @@
+import {registrarPaciente} from "../services/serviciosPaciente.js"
 // Objetivo: Capturar los datos de un formulario 
 
 //1. Por cada input, select, textarea del formulario se crea una variable 
@@ -34,22 +35,23 @@ let datosFormularioPaciente={
     telefono: telefonoPaciente.value,
     ips: ipsPaciente.value,
     grupoIngresos: grupoIngresoPaciente.value,
-    tienePoliza: polizaPaciente.value,
+    tienePoliza: true,
     fechaAfiliacion: fechaAfiliacionPaciente.value
 }
 
 //6. Se envian los datos al back 
 console.log(datosFormularioPaciente)
+registrarPaciente(datosFormularioPaciente)
+.then(function(respuestaBack){
+    console.log(respuestaBack)
+    Swal.fire({
+        title: "Registro Exitoso!",
+        text: "Ya eres parte de nuestra gran familia!",
+        icon: "success"
+      });
 
+})
 
-
-
-
-Swal.fire({
-    title: "Registro Exitoso!",
-    text: "Ya eres parte de nuestra gran familia!",
-    icon: "success"
-  });
 })
 
 
