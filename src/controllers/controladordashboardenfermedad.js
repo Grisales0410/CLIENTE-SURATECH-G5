@@ -1,42 +1,14 @@
-let enfermedades=[
-    {
-        id:123,
-        nombre:"Cancer",
-        sintomas: "Dolor insoportable, mareo, vomito",
-        clasificacion: "grave",
-        grado: "3",
-        probabilidadVida: "0.5"
-    },
-    {
-        id:126,
-        nombre:"Asma",
-        sintomas:"Dificultad para respirar, opresión en el pecho, sibilancias",
-        clasificacion:"moderada",
-        grado:"1",
-        probabilidadVida:"0.98"
-    },
-    {
-        id:127,
-        nombre:"Insuficiencia Renal Crónica",
-        sintomas:"Náuseas, hinchazón en extremidades, fatiga extrema",
-        clasificacion:"grave",
-        grado:"3",
-        probabilidadVida:"0.6"
-    },
-    {
-        id:128,
-        nombre:"Hipertensión Arterial",
-        sintomas:"Dolor de cabeza, mareos, visión borrosa",
-        clasificacion:"moderada",
-        grado:"2",
-        probabilidadVida:"0.95"
-    }
-    ]
+import {buscarEnfermedad} from "../services/serviciosEnfermedad.js"
+
+buscarEnfermedad()
+.then(function(respuestaBack){
+    console.log(respuestaBack)
+
     
     let fila=document.getElementById("fila")
 
 //3. Se recorren los datos para obtenerlos de forma separada 
-enfermedades.forEach(function(enfermedades){
+respuestaBack.forEach(function(enfermedades){
     console.log(enfermedades)
     //4. Se crean columnas 
     let columna=document.createElement("div")
@@ -70,4 +42,5 @@ enfermedades.forEach(function(enfermedades){
     tarjeta.appendChild(probabilidadVida)
     columna.appendChild(tarjeta)
     fila.appendChild(columna)
+})
 })

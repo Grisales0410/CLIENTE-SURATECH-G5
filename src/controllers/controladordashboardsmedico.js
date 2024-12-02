@@ -1,59 +1,14 @@
-let medico=[
-    {
-        id:892,
-        nombres:"Laura Fernández",
-        matriculaProfesional:"123456",
-        especialidad:"Cardiologia",
-        salario:"6.000.000",
-        ips:"Santa Fe",
-        correo:"laurafernandez@sura.com.co",
-        telefono:"3206548970",
-        direccion:"calle 8 # 20-55",
-        disponibleFinDeSemana:true
-       
-    },
-    {
-        id:893,
-        nombres:"Carlos Jiménez",
-        matriculaProfesional:"654321",
-        especialidad:"Neurología",
-        salario:"7.500.000",
-        ips:"San Vicente",
-        correo:"carlosjimenez@sura.com.co",
-        telefono:"3107894561",
-        direccion:"Carrera 12 # 45-89",
-        disponibleFinDeSemana:false
-    },
-    {
-        id:894,
-        nombres:"Ana María Torres",
-        matriculaProfesional:"987654",
-        especialidad:"Pediatría",
-        salario:"5.800.000",
-        ips:"Los Ángeles",
-        correo:"anatorres@sura.com.co",
-        telefono:"3184567890",
-        direccion:"Avenida 34 # 67-12",
-        disponibleFinDeSemana:true
-    },
-    {
-        id:895,
-        nombres:"Juan Pablo Ruiz",
-        matriculaProfesional:"456789",
-        especialidad:"Dermatología",
-        salario:"6.200.000",
-        ips:"San José",
-        correo:"juanruiz@sura.com.co",
-        telefono:"3009876543",
-        direccion:"Calle 50 # 30-25",
-        disponibleFinDeSemana:false
-    }
-]
+import {buscarMedicos} from "../services/serviciosMedico.js"
+
+
+buscarMedicos()
+.then(function(respuestaBack){
+    console.log(respuestaBack)
 
 let fila=document.getElementById("fila")
 
 //3. Se recorren los datos para obtenerlos de forma separada 
-medico.forEach(function(medico){
+respuestaBack.forEach(function(medico){
     console.log(medico)
     //4. Se crean columnas 
     let columna=document.createElement("div")
@@ -103,4 +58,5 @@ medico.forEach(function(medico){
     tarjeta.appendChild(disponibleFinDeSemana)
     columna.appendChild(tarjeta)
     fila.appendChild(columna)
-})
+});
+});

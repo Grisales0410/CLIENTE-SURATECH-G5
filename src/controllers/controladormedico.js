@@ -1,3 +1,5 @@
+import { registrarMedico } from "../services/serviciosMedico.js"
+
 let nombresMedico =document.getElementById("nombremedico")
 let matriculaProfesionalMedico=document.getElementById("matriculamedico")
 let especialidadMedico=document.getElementById("especialidadmedico")
@@ -27,10 +29,15 @@ botonRegistroMedico.addEventListener("click", function(evento){
     }
 
     console.log(datosFormularioMedico)
-        
-    Swal.fire({
+    registrarMedico(datosFormularioMedico)
+    .then(function(respuestaBack){
+      console.log(respuestaBack)
+      Swal.fire({
         title: "Registro Exitoso!",
         text: "Ya eres parte de nuestra gran familia!",
         icon: "success"
       });
     })
+    })
+        
+    

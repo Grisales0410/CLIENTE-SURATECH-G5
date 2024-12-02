@@ -1,3 +1,4 @@
+import {registrarMedicamento} from "../services/serviciosMedicamento.js"
 let nombreMedicamento=document.getElementById("nombremedicamento")
 let presentacionMedicamento=document.getElementById("presentacionmedicamento")
 let dosisMedicamento=document.getElementById("dosismedicamento")
@@ -10,7 +11,7 @@ let tieneCopagoMedicamento=document.getElementById("copagomedicamento")
 let botonRegistroMedicamento=document.getElementById("botonregistromedicamento")
 
 botonRegistroMedicamento.addEventListener("click", function(evento){
-    evento.preventDefault()
+    evento.preventDefault();
 
     let datosFormularioMedicamento={
         nombre : nombreMedicamento.value,
@@ -25,11 +26,14 @@ botonRegistroMedicamento.addEventListener("click", function(evento){
         
     }
 
-    console.log(datosFormularioMedicamento)
-        
+  console.log(datosFormularioMedicamento)
+  registrarMedicamento(datosFormularioMedicamento)
+  .then(function(respuestaBack){
+    console.log(respuestaBack)
     Swal.fire({
         title: "Registro Exitoso!",
         text: "Ya eres parte de nuestra gran familia!",
         icon: "success"
       });
-    })
+    });
+  });
